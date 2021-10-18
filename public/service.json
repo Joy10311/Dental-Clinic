@@ -1,0 +1,74 @@
+[
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Teeth Whitening",
+        "gender": "male",
+        "id": "10",
+        "contact": "1800-123-4567",
+        "degree": "DMD, MSC",
+        "person": "Richard Seth",
+        "personImg": "https://i.ibb.co/2vggK9c/doctor-pic-2.jpg",
+        "image": "https://i.ibb.co/ThkddPZ/teeth-whiting.jpg",
+        "price": "30"
+    },
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Gum Treatment",
+        "gender": "male",
+        "id": "20",
+        "contact": "1800-111-1234",
+        "degree": "Dental Hygienist",
+        "person": "Dr. Martin Lee",
+        "personImg": "https://i.ibb.co/KxHtBqS/doctor-pic-4.jpg",
+        "image": "https://i.ibb.co/bL8nWz7/gum-treatment.jpg",
+        "price": "35"
+    },
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Root Canal",
+        "gender": "female",
+        "id": "30",
+        "contact": "1800-111-1234",
+        "degree": "DMD, MSC",
+        "person": "Dr. Helena Torres",
+        "personImg": "https://i.ibb.co/4JNghJ9/doctor-pic-5.jpg",
+        "image": "https://i.ibb.co/Zf16sss/root-canal.jpg",
+        "price": "39"
+    },
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Smile Design",
+        "gender": "female",
+        "id": "40",
+        "contact": "1800-111-1234",
+        "degree": "Dental Care Cordinator",
+        "person": "Dr. Soim Hicks",
+        "personImg": "https://i.ibb.co/Ss4SPqq/doctor-pic-1.jpg",
+        "image": "https://i.ibb.co/8mK7Bwm/smile-treament.jpg",
+        "price": "29"
+    },
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Restorations",
+        "gender": "female",
+        "id": "50",
+        "contact": "1800-111-1234",
+        "degree": "Denturist",
+        "person": " Dr. Naina Shah",
+        "personImg": "https://i.ibb.co/TRmMw3P/doctor-pic-8.jpg",
+        "image": "https://i.ibb.co/SKZTcYn/restore.jpg",
+        "price": "37"
+    },
+    {
+        "description": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+        "title": "Sleep Apnea",
+        "gender": "male",
+        "id": "60",
+        "contact": "1800-111-1234",
+        "degree": "Denturist",
+        "person": " John Deo",
+        "personImg": "https://i.ibb.co/rMKgjr7/doctor-pic-6.jpg",
+        "image": "https://i.ibb.co/jbwtpBw/sleep-apena.jpg",
+        "price": "42"
+    }
+]
