@@ -5,7 +5,7 @@ import SetDoctor from '../SetDoctor/SetDoctor';
 const Doctors = () => {
     const [services] = useServices([]);
     return (
-        <div className="grid grid-cols-3">
+        <div className="grid lg:grid-cols-3">
 
             {
                 services.map(doctor => <SetDoctor

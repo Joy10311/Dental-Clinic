@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SetServices = ({ serv }) => {
-    const { image, title, description, price, person } = serv;
+    const { id, image, title, description, price, person } = serv;
 
     return (
         <div>
@@ -12,7 +13,7 @@ const SetServices = ({ serv }) => {
                     <p className="text-justify pl-5 pr-2 font-normal">{description} </p>
                     <h5 className="font-bold text-red-700 text-center text-2xl ">Trainer: {person}</h5>
                     <h5 className="font-semibold text-center text-xl">Price: {price}$</h5>
-                    <button className="bg-blue-700 text-white rounded-lg mt-3 ml-44  p-3 mb-3">Enroll Here</button>
+                    <Link to={`/getservice/${id}`}><button className="bg-blue-700 text-white rounded-lg mt-3 ml-20 lg:ml-44   p-3 mb-3">Get This Service</button></Link>
                 </div>
             </div>
         </div>
