@@ -9,6 +9,7 @@ const Service = () => {
         <div className="grid lg:grid-cols-3 ">
             {
                 services.map(serv => <SetServices
+                    key={serv.id}
                     serv={serv}
                 ></SetServices>)
             }

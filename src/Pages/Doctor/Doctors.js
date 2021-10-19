@@ -9,6 +9,7 @@ const Doctors = () => {
 
             {
                 services.map(doctor => <SetDoctor
+                    key={doctor.id}
                     doctor={doctor}
                 ></SetDoctor>)
             }

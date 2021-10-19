@@ -48,4 +48,3 @@ const Home = () => {
 
 export default Home;
 
-// h2 className="text-3xl text-blue-600 pt-20 pl-20">Click To See Our Doctors</h2>
