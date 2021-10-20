@@ -52,7 +52,6 @@ const useFirebase = () => {
 
     const handlRegister = e => {
         e.preventDefault();
-        console.log(email, password);
         if (password.length < 6) {
             setError('Password should be 6 charecter')
             return;
@@ -66,7 +65,6 @@ const useFirebase = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 setError('');
                 verifyMail();
                 setUserName();
@@ -96,8 +94,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user)
-                setError('')
+                setError('');
             })
             .catch(error => {
                 setError(error.message)

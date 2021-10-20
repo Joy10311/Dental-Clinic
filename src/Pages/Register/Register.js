@@ -20,7 +20,7 @@ const Register = () => {
                     <label className="text-2xl" htmlFor="password">Password:</label>
                     <input onBlur={handlePasswordChange} className="block border border-yellow-600 px-10 py-3" type="password" name="" id="" placeholder="Enter Password" required />
                     <div className="block text-red-700">{error}</div>
-                    <Link to="/login"><input className="bg-blue-300 text-base rounded px-1 py-1 mr-2 mt-2" type="submit" value="Register" /></Link>
+                    <input className="bg-blue-300 text-base rounded px-1 py-1 mr-2 mt-2" type="submit" value="Register" />
 
                 </form>
                 <p className="text-2xl mt-10">Already have an account? <Link to="/login"> <span className="text-red-700 font-bold">Log In</span> </Link></p>

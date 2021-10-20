@@ -22,7 +22,7 @@ const GetService = () => {
 
 
     return (
-        <div className="ml-10 mb-10">
+        <div className="lg:ml-10 mb-10">
 
             <div className="grid lg:grid-cols-2">
                 <img src={singleService?.image} alt="" />
