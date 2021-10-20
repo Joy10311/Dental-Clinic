@@ -58,7 +58,7 @@ const useFirebase = () => {
         }
 
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{6,}$/.test(password)) {
-            setError('password should be uppercase, special sign and number')
+            setError('password should be 6 charecter includes uppercase,lowercae,special sign and number')
             return;
         }
 
