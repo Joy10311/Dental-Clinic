@@ -2,6 +2,7 @@ import React from 'react';
 
 const Product = ({ product }) => {
     const { title, contact, image, price } = product;
+
     return (
         <div>
             <div className=" border-solid border-4 border-light-blue-500 mx-4 my-4 ">

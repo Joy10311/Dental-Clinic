@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import initializeAuthentication from "../../Firebase/firebase.init"
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, updateProfile, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 
 
 initializeAuthentication();
 const useFirebase = () => {
+    const [name, setName] = useState('')
     const [email, setEmail] = useState('');
-    // const [isLogIn, setIsLogIn] = useState('false')
     const [password, setPassword] = useState('');
     const [user, setUser] = useState({});
     const [error, setError] = useState('')
@@ -35,12 +35,18 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    // const handleNameChange = e => {
+    //     setName(e.target.valo);
+    // }
+
+
     const handleEmailChange = e => {
-        setEmail(e.target.value)
+        setEmail(e.target.value);
     }
 
+
     const handlePasswordChange = e => {
-        setPassword(e.target.value)
+        setPassword(e.target.value);
     }
 
 
@@ -63,6 +69,8 @@ const useFirebase = () => {
                 console.log(user);
                 setError('');
                 verifyMail();
+                setUserName();
+
             })
             .catch(error => {
                 setError(error.message)
@@ -70,6 +78,10 @@ const useFirebase = () => {
 
     }
 
+    const setUserName = () => {
+        updateProfile(auth.currentUser, { displayName: name })
+            .then(() => { })
+    }
 
 
     const verifyMail = () => {
@@ -84,6 +96,7 @@ const useFirebase = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user)
                 setError('')
             })
             .catch(error => {
@@ -118,6 +131,7 @@ const useFirebase = () => {
         isLoading,
         handleLogIn,
         handlRegister,
+        setName,
         handlePasswordChange,
         handleEmailChange,
         signInUsingGoogle

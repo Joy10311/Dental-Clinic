@@ -7,7 +7,7 @@ const Emergency = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('https://mocki.io/v1/724b9fa0-f4f2-4feb-b27b-57bd9ad175ab')
+        fetch('https://mocki.io/v1/92332688-3071-4fc4-a8b2-f862e08a2e5a')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, []);
@@ -17,7 +17,7 @@ const Emergency = () => {
 
             {
                 products.map(product => <Product
-                    key={product.id}
+                    key={product.price}
                     product={product}
                 ></Product>)
             }
