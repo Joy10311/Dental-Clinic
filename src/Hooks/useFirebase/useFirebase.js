@@ -7,60 +7,11 @@ import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChang
 initializeAuthentication();
 const useFirebase = () => {
     const [email, setEmail] = useState('');
-    const [isLogIn, setIsLogIn] = useState('false')
+    // const [isLogIn, setIsLogIn] = useState('false')
     const [password, setPassword] = useState('');
     const [user, setUser] = useState({});
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true);
-
-
-    const handleEmailChange = e => {
-        setEmail(e.target.value)
-    }
-
-    const handlePasswordChange = e => {
-        setPassword(e.target.value)
-    }
-
-    const handlRegister = e => {
-        e.preventDefault();
-        if (password.length < 6) {
-            setError('password must be 6 Charecter')
-            return
-        }
-        isLogIn ? processLogIn(email, password) : createNewUser(email, password);
-
-    }
-
-    const processLogIn = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user;
-                setError('')
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-
-    }
-    const verifyMail = () => {
-        sendEmailVerification(auth.currentUser)
-            .then(result => {
-
-            })
-    }
-
-    const createNewUser = (email, password) => {
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user
-                setError('')
-                verifyMail()
-            })
-            .catch(error => {
-                setError(error.message)
-            })
-    }
 
 
 
@@ -84,6 +35,63 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     }
 
+    const handleEmailChange = e => {
+        setEmail(e.target.value)
+    }
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value)
+    }
+
+
+    const handlRegister = e => {
+        e.preventDefault();
+        console.log(email, password);
+        if (password.length < 6) {
+            setError('Password should be 6 charecter')
+            return;
+        }
+
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*]).{6,}$/.test(password)) {
+            setError('password should be uppercase, special sign and number')
+            return;
+        }
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                setError('');
+                verifyMail();
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
+    }
+
+
+
+    const verifyMail = () => {
+        sendEmailVerification(auth.currentUser)
+            .then(result => {
+
+            })
+    }
+
+    const handleLogIn = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then(result => {
+                const user = result.user;
+                setError('')
+            })
+            .catch(error => {
+                setError(error.message)
+            })
+
+
+    }
 
 
     useEffect(() => {
@@ -99,11 +107,16 @@ const useFirebase = () => {
         return () => unsubscribe;
     }, [])
 
+
+
+
+
     return {
         user,
         error,
         logOut,
         isLoading,
+        handleLogIn,
         handlRegister,
         handlePasswordChange,
         handleEmailChange,
