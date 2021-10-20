@@ -20,6 +20,3 @@
 
 `There you got all dental services and get usefull dental medecine.
 There is also professional doctor .If you need to hire ,you get their number in their profile`
-
-
-
